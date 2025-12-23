@@ -3,9 +3,11 @@ package com.rac.EDBMS.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@Data
 public class EmployeeDeptResponse {
 
     private Integer empId;
@@ -16,9 +18,7 @@ public class EmployeeDeptResponse {
     private String dept;
     private String dname;
 
-    
 
-    //  Used by JPQL "new"
     @JsonCreator
     public EmployeeDeptResponse(
             @JsonProperty("empId") Integer empId,
@@ -38,12 +38,4 @@ public class EmployeeDeptResponse {
         this.dname = dname;
     }
 
-    // EXPLICIT GETTERS (no Lombok dependency)
-    public Integer getEmpId() { return empId; }
-    public String getEname() { return ename; }
-    public String getJob() { return job; }
-    public Integer getAge() { return age; }
-    public Integer getDepId() { return depId; }
-    public String getDept() { return dept; }
-    public String getDname() { return dname; }
 }
